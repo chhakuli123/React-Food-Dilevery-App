@@ -34,12 +34,12 @@ body {
 }
 
 .card {
-  margin: 10px;
-  background-color: #fff;
+  /* margin: 10px; */
+  background-color: rgb(247, 197, 197);
   border-radius: 10px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  width: 300px;
+  /* overflow: hidden; */
+  /* width: 300px; */
 }
 .card:hover {
   transform: translateY(-5px) scale(1.005) translateZ(0);
@@ -64,6 +64,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin-top: 3rem;
+  margin-left: 2rem;
 }
 
 .menu {
