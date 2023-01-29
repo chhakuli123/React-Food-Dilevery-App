@@ -147,11 +147,12 @@ a:hover {
   margin-left: 2rem;
 }
 .shimmer-card {
-  width: 200px;
+  width: 18rem;
   border: 2px solid rgb(175, 175, 175);
-  padding: 10px;
-  margin: 10px;
+  padding: 9px;
+  margin: 1.6rem;
   border-radius: 5px;
+  background-color: rgb(175, 175, 175);
 }
 .shimmer-card > img {
   width: 100%;
