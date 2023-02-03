@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import RestaurentCard from "./RestaurentCard";
 import Shimmer from "./Shimmer";
+import useOnline from "../utils/useOnline";
 // import { restaurantList } from "../Components/config";
 
 function Body() {
@@ -50,6 +52,12 @@ function Body() {
     setFilteredRestaurents(praj?.data?.cards[2]?.data?.data?.cards);
   }
 
+  //hook for user is offline
+  const isOnline = useOnline();
+  if (!isOnline) {
+    return <h1>Failed to load, Please check your internet connection</h1>;
+  }
+
   //we have to put shimmer ui for great user experience
   //if  restaurent is empty =>then load shimmer ui
   //otherwise load api
@@ -60,30 +68,37 @@ function Body() {
   ) : (
     <>
       {/* //search functionality */}
-      <input
-        type="text"
-        className="search-input"
-        placeholder="Search a restaurent"
-        value={searchText}
-        onChange={(e) => {
-          setSearchText(e.target.value);
-        }}
-      />
-      <button
-        className="search-btn"
-        onClick={() => {
-          const data = filterData(searchText, allRestaurents);
-          setFilteredRestaurents(data);
-        }}
-      >
-        Search
-      </button>
+      <div className="search-container">
+        <input
+          type="text"
+          className="search-input"
+          placeholder="Search a restaurent"
+          value={searchText}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
+        />
+        <button
+          className="search-btn"
+          onClick={() => {
+            const data = filterData(searchText, allRestaurents);
+            setFilteredRestaurents(data);
+          }}
+        >
+          Search
+        </button>
+      </div>
 
       {/* we are mapping the every restauraent to erender */}
       <div className="restaurant-list">
         {filteredRestaurents.map((restaurent) => {
           return (
-            <RestaurentCard {...restaurent.data} key={restaurent.data.id} />
+            <Link
+              to={"/restaurent/" + restaurent.data.id}
+              key={restaurent.data.id}
+            >
+              <RestaurentCard {...restaurent.data} />
+            </Link>
           );
         })}
       </div>
