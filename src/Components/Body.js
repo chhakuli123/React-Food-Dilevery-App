@@ -68,10 +68,10 @@ function Body() {
   ) : (
     <>
       {/* //search functionality */}
-      <div className="search-container">
+      <div className=" ml-80 p-4 bg-gray">
         <input
           type="text"
-          className="search-input"
+          className=" ml-72 mx-3 p-1 px-2 border  rounded-lg  border-gray-400 "
           placeholder="Search a restaurent"
           value={searchText}
           onChange={(e) => {
@@ -79,7 +79,7 @@ function Body() {
           }}
         />
         <button
-          className="search-btn"
+          className=" p-1 px-2 bg-gray-700 text-white rounded-md"
           onClick={() => {
             const data = filterData(searchText, allRestaurents);
             setFilteredRestaurents(data);
@@ -90,7 +90,7 @@ function Body() {
       </div>
 
       {/* we are mapping the every restauraent to erender */}
-      <div className="restaurant-list">
+      <div className="flex flex-wrap ml-12">
         {filteredRestaurents.map((restaurent) => {
           return (
             <Link
