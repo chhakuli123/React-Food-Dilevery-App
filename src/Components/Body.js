@@ -55,7 +55,11 @@ function Body() {
   //hook for user is offline
   const isOnline = useOnline();
   if (!isOnline) {
-    return <h1>Failed to load, Please check your internet connection</h1>;
+    return (
+      <span className="font-bold">
+        Failed to load, Please check your internet connection
+      </span>
+    );
   }
 
   //we have to put shimmer ui for great user experience
