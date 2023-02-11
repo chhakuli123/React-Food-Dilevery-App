@@ -21,7 +21,9 @@ function Header() {
             {" "}
             <Link to="/contact">Contact </Link>
           </li>
-          <li className="px-2 hover:text-orange-400">Cart</li>
+          <li className="px-2 hover:text-orange-400">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </li>
           {loggedIn === "true" ? (
             <li>
               <button
