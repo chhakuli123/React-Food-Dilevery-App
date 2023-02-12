@@ -12,7 +12,7 @@ function RestaurentCard({
   avgRating,
 }) {
   return (
-    <div className="w-80 p-3 m-3 rounded-md shadow-2xl hover:shadow-lg  ">
+    <div className=" w-80 p-3 m-3 rounded-md shadow-2xl hover:shadow-lg  ">
       <img
         className="rounded-md shadow-md"
         src={IMG_CDN_URL + cloudinaryImageId}
