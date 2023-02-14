@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import useRestaurentMenu from "../utils/useRestaurentMenu";
 import { IMG_CDN_URL, MENU_IMG_CDN_URL } from "./config";
 import { MenuShimmer } from "./Shimmer";
-import RestroMenuDish from "../assets/RestroMenuDish.jpg";
 
 function RestaurentMenu() {
   // call useParams and get value of restaurent id using object destructuring
@@ -117,7 +116,7 @@ function RestaurentMenu() {
                     <img
                       className="menu-item-img   h-[9rem] w-48 rounded-md "
                       src={MENU_IMG_CDN_URL + item?.cloudinaryImageId}
-                      alt={RestroMenuDish}
+                      alt=""
                     />
                   )}
                   <button className="add-btn mt-2 rounded-md text-white p-2 bg-red-500 ">
