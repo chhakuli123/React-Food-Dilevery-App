@@ -1,6 +1,6 @@
 // Swigy api to fetch restro
 export const RESTRO_URL =
-  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING";
+  "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING";
 
 // Image CDN URL for Restaurant card
 export const IMG_CDN_URL =
@@ -8,7 +8,7 @@ export const IMG_CDN_URL =
 
 // Swiggy API to get Restaurant Menu data
 export const RESTRO_MENU_URL =
-  "https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId=";
+  "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/menu/v4/full?lat=21.1702401&lng=72.83106070000001&menuId=";
 
 // Image CDN URL for Restaurant Menu
 export const MENU_IMG_CDN_URL =
