@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.svg";
 
 function Header() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -10,11 +10,14 @@ function Header() {
   const cartItems = useSelector((store) => store.cart.items);
 
   return (
-    <div className="flex justify-between">
-      <img src={logo} alt="" className="h-36" />
+    <div
+      className="flex  justify-evenly p-2 sticky top-0 bg-white"
+      style={{ boxShadow: "0 2px 14px #888484" }}
+    >
+      <img src={logo} alt="" className="h-20" />
       <div>
-        <ul className="flex py-6 px-6 mt-6 text-black text-xl">
-          <div className="flex mr-[30rem] space-x-4">
+        <ul className="flex  mt-6 text-black text-xl">
+          <div className="flex mr-[36rem] space-x-4">
             <li className="px-2 hover:text-orange-400">
               <Link to="/">Home</Link>
             </li>
