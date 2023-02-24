@@ -1,4 +1,6 @@
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { addItem, removeItem } from "../Redux_Store/cartSlice";
 import useRestaurentMenu from "../utils/useRestaurentMenu";
 import { IMG_CDN_URL, MENU_IMG_CDN_URL } from "./config";
 import { MenuShimmer } from "./Shimmer";
@@ -10,35 +12,21 @@ function RestaurentMenu() {
   //this is custom hook
   const restaurent = useRestaurentMenu(id);
 
+  //This is hook for dispatch the action
+  const dispatch = useDispatch();
+
+  //function to handel items on click of add button
+  const handelAddItems = (item) => {
+    dispatch(addItem(item));
+  };
+  //function to handel items on click of remove button
+  const handelRemoveItems = () => {
+    dispatch(removeItem());
+  };
+
   return !restaurent ? (
     <MenuShimmer />
   ) : (
-    // <div className="flex justify-center">
-    //   <div className="w-88 h-88 p-2 m-6 rounded-md shadow-2xl  hover:shadow-lg">
-    //     <img
-    //       className="rounded-md shadow-md"
-    //       src={IMG_CDN_URL + restaurent?.cloudinaryImageId}
-    //       alt={restaurent?.name}
-    //     />
-    //     <h1 className="text-2xl font-bold">{restaurent?.name}</h1>
-    //     <h1 className="font-bold">Restraunt id: {id}</h1>
-    //     <h3 className="font-bold">
-    //       {restaurent?.area},{restaurent?.city}
-    //     </h3>
-    //     <h3 className="font-bold">{restaurent?.avgRating} stars</h3>
-    //     <h3 className="font-bold">{restaurent?.costForTwoMsg}</h3>
-    //   </div>
-    //   <div className="w-80 p-2 m-3   rounded-md shadow-2xl  hover:shadow-lg ">
-    //     <h1 className="text-2xl font-bold">Menu</h1>
-    //     <ul>
-    //       {Object.values(restaurent?.menu?.items).map((item) => (
-    //         <li className="text-lg" key={item.id}>
-    //           {item.name}
-    //         </li>
-    //       ))}
-    //     </ul>
-    //   </div>
-    // </div>
     <div className="restaurent-menu">
       <div className="restaurent-summary flex justify-center bg-black h-[15rem] w-[84rem] ml-24 rounded-2xl">
         <img
@@ -81,14 +69,6 @@ function RestaurentMenu() {
 
       <div className="restaurent-menu-content">
         <div className="menu-items-container  ml-32 mt-8">
-          <div className="menu-title-wrap">
-            <h3 className="menu-title text-black font-bold text-2xl">
-              Recommended
-            </h3>
-            <p className="menu-count text-slate-500 mt-2  ">
-              {Object.keys(restaurent?.menu?.items).length} ITEMS
-            </p>
-          </div>
           <div className="menu-items-list mt-4">
             {Object.values(restaurent?.menu?.items).map((item) => (
               <div
@@ -119,8 +99,17 @@ function RestaurentMenu() {
                       alt=""
                     />
                   )}
-                  <button className="add-btn mt-2 rounded-md text-white p-2 bg-red-500 ">
-                    ADD +
+                  <button
+                    className="add-btn mt-2 rounded-md text-white p-2 bg-red-500 "
+                    onClick={() => handelAddItems(item)}
+                  >
+                    ADD
+                  </button>
+                  <button
+                    className="add-btn mt-2  ml-8 rounded-md text-white p-2 bg-red-500 "
+                    onClick={() => handelRemoveItems()}
+                  >
+                    Remove
                   </button>
                 </div>
               </div>
