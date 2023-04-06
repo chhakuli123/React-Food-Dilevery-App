@@ -72,7 +72,7 @@ function RestaurentMenu() {
           <div className="menu-items-list mt-4">
             {Object.values(restaurent?.menu?.items).map((item) => (
               <div
-                className="menu-item flex justify-between h-[14rem] mb-4 p-4 w-[76rem] rounded-2xl bg-red-100"
+                className="menu-item flex justify-between h-[14rem] mb-4 p-4 w-[60rem] rounded-2xl border-[2.5px]"
                 key={item?.id}
               >
                 <div className="menu-item-details">
@@ -100,16 +100,16 @@ function RestaurentMenu() {
                     />
                   )}
                   <button
-                    className="add-btn mt-2 rounded-md text-white p-2 bg-red-500 "
+                    className="add-btn mt-2 ml-2 rounded-md text-white p-2 bg-red-500 "
                     onClick={() => handelAddItems(item)}
                   >
-                    ADD
+                    ADD +
                   </button>
                   <button
-                    className="add-btn mt-2  ml-8 rounded-md text-white p-2 bg-red-500 "
+                    className="add-btn mt-2  ml-6 rounded-md text-white p-2 bg-red-500 "
                     onClick={() => handelRemoveItems()}
                   >
-                    Remove
+                    - Remove
                   </button>
                 </div>
               </div>
