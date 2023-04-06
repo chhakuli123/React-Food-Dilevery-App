@@ -8,7 +8,7 @@ export const IMG_CDN_URL =
 
 // Swiggy API to get Restaurant Menu data
 export const RESTRO_MENU_URL =
-  "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/menu/v4/full?lat=21.1702401&lng=72.83106070000001&menuId=";
+  "https://www.swiggy.com/dapi/menu/v4/full?lat=21.1702401&lng=72.83106070000001&menuId=";
 
 // Image CDN URL for Restaurant Menu
 export const MENU_IMG_CDN_URL =
